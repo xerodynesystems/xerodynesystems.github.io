@@ -1,0 +1,125 @@
+/* Reset styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    font-family: 'Courier New', Courier, monospace;
+    color: #ffffff;
+    background-color: #000000;
+}
+
+/* Terminal styles */
+.terminal {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 900px;
+    margin: 50px auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(128, 0, 128, 0.7);
+    border: 2px solid #800080;
+}
+
+/* Terminal header */
+.header {
+    background: #2d2d2d;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 2px solid #800080;
+}
+
+.header .buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.header .buttons span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.header .buttons .red {
+    background: #ff5f56;
+}
+
+.header .buttons .yellow {
+    background: #ffbd2e;
+}
+
+.header .buttons .green {
+    background: #27c93f;
+}
+
+.header .title {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+/* Terminal body */
+.body {
+    padding: 20px;
+    background: #000000;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Prompt line */
+.line {
+    margin-bottom: 10px;
+}
+
+.prompt {
+    color: #800080;
+    font-weight: bold;
+}
+
+.highlight {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.comment {
+    color: #6c757d;
+    font-style: italic;
+}
+
+.command {
+    color: #50fa7b;
+}
+
+.email {
+    color: #8be9fd;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.email:hover {
+    text-decoration: underline;
+}
+
+/* Blinking cursor */
+.cursor .blinking {
+    display: inline-block;
+    width: 10px;
+    height: 1em;
+    background: #ffffff;
+    animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
