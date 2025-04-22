@@ -3,46 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Xerodyne Systems</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>XeroDyne Systems | Custom MicroSaaS for Oklahoma Oil & Gas</title>
+    <meta name="description" content="XeroDyne Systems delivers custom microSaaS applications in 3-6 months, specializing in solutions for the Oklahoma oil and gas industry. Streamline your operations with tailored software.">
+    <meta name="keywords" content="Oklahoma oil and gas software, custom app development Oklahoma, microSaaS solutions, logistics software oil and gas, rapid SaaS development, XeroDyne Systems, field service management software">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="XeroDyne Systems | Custom MicroSaaS for Oklahoma Oil & Gas">
+    <meta property="og:description" content="Rapidly developed, custom software solutions tailored for the specific needs of Oklahoma's oil and gas sector by XeroDyne Systems.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-purple': '#6d28d9', // Vibrant Purple
+                        'brand-teal': '#14b8a6',   // Vibrant Teal
+                    },
+                    fontFamily: {
+                        sans: ['Share Tech Mono', 'monospace'], // Retro monospace font
+                    },
+                    boxShadow: {
+                        'glow-teal': '0 0 15px 5px rgba(20, 184, 166, 0.5)',
+                        'glow-purple': '0 0 15px 5px rgba(109, 40, 217, 0.5)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #000000; /* Pure black background */
+            color: #e5e7eb; /* gray-200 */
+            font-family: 'Share Tech Mono', monospace; /* Font applied via Tailwind config */
+        }
+        .hero-glow {
+            position: relative;
+            z-index: 1;
+        }
+        .hero-glow::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 140%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(109, 40, 217, 0.25) 0%, rgba(109, 40, 217, 0) 65%); /* Purple glow effect */
+            z-index: -1;
+            animation: pulse-glow 8s infinite ease-in-out;
+        }
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #14b8a6, transparent); /* Teal gradient divider */
+            opacity: 0.7;
+            margin: 4rem auto;
+            width: 80%;
+            max-width: 600px;
+        }
+        .portfolio-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(20, 184, 166, 0.3); /* Teal shadow on hover */
+        }
+        /* Helper class for purple text */
+        .text-brand-purple {
+             color: #6d28d9;
+        }
+        /* Helper class for teal text */
+        .text-brand-teal {
+             color: #14b8a6;
+        }
+        /* Style for the phone number link */
+        .phone-link {
+            color: #a5b4fc; /* Indigo-300 for visibility */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .phone-link:hover {
+            color: #c7d2fe; /* Indigo-200 on hover */
+        }
+    </style>
 </head>
-<body>
-    <div class="terminal">
-        <div class="header">
-            <div class="buttons">
-                <span class="red"></span>
-                <span class="yellow"></span>
-                <span class="green"></span>
-            </div>
-            <div class="title">Xerodyne Systems © 2024/2025</div>
+<body class="bg-black text-gray-200 antialiased">
+
+    <header class="py-6 px-4 md:px-8 sticky top-0 z-50 bg-black/80 backdrop-blur-sm">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold tracking-tight">
+                <span class="text-brand-purple">Xerodyne</span><span class="text-brand-teal">Systems</span>
+            </h1>
+            <nav>
+                <a href="mailto:speed@xerodyne.systems?subject=Consultation Request"
+                   title="Email XeroDyne Systems for a Consultation"
+                   class="bg-brand-purple hover:bg-purple-700 text-white font-semibold py-2 px-5 rounded-lg transition duration-300 ease-in-out shadow-md hover:shadow-glow-purple text-sm md:text-base">
+                    Request Consultation
+                </a>
+            </nav>
         </div>
-        <div class="body">
-            <div class="line">
-                <span class="prompt">[xerodyne@system]$</span> Welcome to <span class="highlight">Xerodyne Systems</span>
-            </div>
-            <div class="line">
-                <span class="prompt">[xerodyne@system]$</span> <span class="highlight">"Building apps at the speed of thought"</span>
-            </div>
-            <div class="line">
-                <span class="prompt">[xerodyne@system]$</span> <span class="comment"># Our Mission:</span>
-            </div>
-            <div class="line">
-                <span class="prompt">[xerodyne@system]$</span> <span class="highlight">"Creating fast and lightweight microSaas Solutions"</span>
-            </div>
-            <div class="line">
-                <span class="prompt">[xerodyne@system]$</span> <span class="command">Contact us at:</span> <a href="mailto:speed@xerodyne.systems" class="email">speed@xerodyne.systems</a>
-            </div>
-            <div class="line">
-                <span class="prompt">[xerodyne@system]$</span> <a href="rush-it.html">App Portfolio - Rush-It</a>
-            </div>
-            <div class="line">
-                <span class="prompt">[xerodyne@system]$</span> <span class="comment"># Visit us again soon!</span>
-            </div>
-            <div class="line cursor">
-                <span class="prompt">[xerodyne@system]$</span> <span class="blinking">|</span>
+    </header>
+
+    <section class="hero-glow text-center py-20 md:py-32 px-4 overflow-hidden">
+        <div class="container mx-auto relative z-10">
+            <h2 class="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
+                Building Your <span class="text-brand-teal">Future</span>, Faster.
+            </h2>
+            <p class="text-lg md:text-xl text-purple-300 mb-8 max-w-3xl mx-auto">
+                Rapid MicroSaaS solutions delivered by <span class="font-semibold text-white">XeroDyne Systems</span> in 3-6 months, precision-engineered for the unique demands of the <span class="font-semibold text-teal-300">Oklahoma oil and gas industry and anywhere else</span>.
+            </p>
+            <a href="#services" class="bg-brand-teal hover:bg-teal-500 text-black font-bold py-3 px-8 rounded-lg transition duration-300 ease-in-out shadow-lg hover:shadow-glow-teal text-base md:text-lg">
+                Discover Our Process
+            </a>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section id="services" class="py-16 md:py-24 px-4">
+        <div class="container mx-auto text-center">
+            <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">Focused Solutions, Accelerated Delivery</h3>
+            <p class="text-purple-300 mb-12 max-w-2xl mx-auto">
+                We skip the bloat. <span class="font-semibold text-white">XeroDyne Systems</span> crafts targeted MicroSaaS applications addressing your specific operational bottlenecks. Our agile process guarantees functional, high-impact software in just 3 to 6 months.
+            </p>
+            <div class="grid md:grid-cols-3 gap-8 text-left">
+                <div class="bg-gray-900 p-6 rounded-lg border border-gray-700 shadow-lg">
+                    <div class="text-brand-teal mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-semibold text-white mb-2">Rapid Development</h4>
+                    <p class="text-gray-400">From concept to deployment in record time. Our streamlined workflow focuses on delivering core functionality quickly and efficiently.</p>
+                </div>
+                <div class="bg-gray-900 p-6 rounded-lg border border-gray-700 shadow-lg">
+                    <div class="text-brand-teal mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17.25v-.001M9.75 14.25v-.001M14.25 17.25v-.001M14.25 14.25v-.001M5.25 19.5h13.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H5.25a2.25 2.25 0 00-2.25 2.25v10.5a2.25 2.25 0 002.25 2.25z" />
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-semibold text-white mb-2">Targeted Use Cases</h4>
+                    <p class="text-gray-400">We specialize in solving specific problems for the <span class="font-medium text-teal-400">Oklahoma oil and gas sector</span>, from logistics optimization to data management.</p>
+                </div>
+                <div class="bg-gray-900 p-6 rounded-lg border border-gray-700 shadow-lg">
+                    <div class="text-brand-teal mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75l-10.5 10.5m0-10.5l10.5 10.5" />
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-semibold text-white mb-2">MicroSaaS Model</h4>
+                    <p class="text-gray-400">Lean, efficient, and cost-effective. Get the exact software you need without paying for unnecessary features or long development cycles.</p>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section id="portfolio" class="py-16 md:py-24 px-4">
+        <div class="container mx-auto text-center">
+            <h3 class="text-3xl md:text-4xl font-bold text-white mb-12">Our Portfolio</h3>
+            <div class="max-w-xl mx-auto bg-gray-900 rounded-lg border border-gray-700 shadow-xl overflow-hidden portfolio-card">
+                <div class="bg-gradient-to-br from-purple-900 to-teal-900 h-48 flex items-center justify-center">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-teal-400 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                       <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.125-.504 1.125-1.125V14.25m-17.25 4.5h14.25m-14.25 0V6.75c0-1.036.84-1.875 1.875-1.875h10.5c1.036 0 1.875.84 1.875 1.875v10.5m0-12.375h-1.5a1.125 1.125 0 00-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125h1.5c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125z" />
+                     </svg>
+                     <span class="ml-4 text-2xl font-semibold text-teal-200">Lightweight Dispatch Solution</span>
+                </div>
+                <div class="p-6 md:p-8 text-left">
+                    <h4 class="text-2xl font-semibold text-white mb-3">Rush-I.T. Dispatch - Logistics Optimization</h4>
+                    <p class="text-gray-400 mb-4">
+                        Developed for an <span class="font-medium text-teal-400">Oklahoma-based oilfield service company</span>, Rush-I.T. streamlines sending jobs and managing times. This MicroSaaS solution significantly time spent dispatching and improved response times across their service area.
+                    </p>
+                    <p class="text-gray-400 mb-6">
+                        Features include optimized web portals for any system or device, driver mobile interface, and management dashboard, and an AI summarizer.
+                    </p>
+                    <a href="rush-it.html" class="inline-block text-brand-teal hover:text-teal-300 font-semibold transition duration-300">
+                        Explore Rush-I.T. &rarr;
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <section id="contact" class="py-16 md:py-24 px-4 bg-gray-900/70">
+        <div class="container mx-auto text-center">
+            <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Streamline Your Operations?</h3>
+            <p class="text-purple-300 mb-8 max-w-2xl mx-auto">
+                Let's discuss how a custom MicroSaaS solution from <span class="font-semibold text-white">XeroDyne Systems</span> can address your specific challenges in the <span class="font-semibold text-teal-300">Oklahoma oil and gas market</span>. Get started with a free consultation.
+            </p>
+            <a href="mailto:speed@xerodyne.systems?subject=Consultation Request - Oklahoma Oil & Gas Solution"
+               title="Email XeroDyne Systems for a Free Consultation"
+               class="bg-brand-purple hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 ease-in-out shadow-lg hover:shadow-glow-purple text-base md:text-lg mb-4 inline-block">
+                Request Free Consultation via Email
+            </a>
+            <p class="text-purple-300 mt-4">
+                Or call us directly at: <a href="tel:405-440-3120" class="phone-link font-semibold">405-440-3120</a>
+            </p>
+        </div>
+    </section>
+
+    <footer class="py-8 px-4 mt-16 border-t border-gray-700/50">
+        <div class="container mx-auto text-center text-gray-500 text-sm">
+            <p>&copy; <span id="current-year"></span> XeroDyne Systems Solutions. All Rights Reserved.</p>
+            <p class="mt-1">Specializing in rapid software development for the Oklahoma Oil & Gas Industry.</p>
+             <script>
+                document.getElementById('current-year').textContent = new Date().getFullYear();
+            </script>
+        </div>
+    </footer>
+
 </body>
 </html>
