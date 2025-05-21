@@ -3,250 +3,462 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xerodyne Systems | Custom MicroSaaS for Oklahoma Oil & Gas</title>
-    <meta name="description" content="Xerodyne Systems delivers custom microSaaS applications in 3-6 months, specializing in solutions for the Oklahoma oil and gas industry. Streamline your operations with tailored software.">
-    <meta name="keywords" content="Oklahoma oil and gas software, custom app development Oklahoma, microSaaS solutions, logistics software oil and gas, rapid SaaS development, XeroDyne Systems, field service management software">
+    <title>Xerodyne Systems | Custom MicroSaaS Solutions</title>
+    <meta name="description" content="Xerodyne Systems delivers custom microSaaS applications in 3-6 months, specializing in solutions for the Oklahoma oil and gas industry and beyond. Streamline your operations with tailored software.">
+    <meta name="keywords" content="custom software development, microSaaS, Oklahoma oil and gas software, logistics software, rapid app development, Xerodyne Systems, field service management">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Xerodyne Systems | Custom MicroSaaS for Oklahoma Oil & Gas">
-    <meta property="og:description" content="Rapidly developed, custom software solutions tailored for the specific needs of Oklahoma's oil and gas sector by XeroDyne Systems.">
+    <meta property="og:title" content="Xerodyne Systems | Custom MicroSaaS Solutions">
+    <meta property="og:description" content="Rapidly developed, custom software solutions tailored for your specific needs by Xerodyne Systems.">
     <meta property="og:type" content="website">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'brand-purple': '#6d28d9', // Vibrant Purple
-                        'brand-teal': '#14b8a6',   // Vibrant Teal
-                    },
-                    fontFamily: {
-                        sans: ['Share Tech Mono', 'monospace'], // Retro monospace font
-                    },
-                    boxShadow: {
-                        'glow-teal': '0 0 15px 5px rgba(20, 184, 166, 0.5)',
-                        'glow-purple': '0 0 15px 5px rgba(109, 40, 217, 0.5)',
-                    }
-                }
-            }
-        }
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <style>
+        :root {
+            --brand-purple: #6d28d9;
+            --brand-purple-darker: #4b1b99; /* Darker purple for evil vibe */
+            --brand-purple-lighter: #8b5cf6;
+            --brand-teal: #14b8a6;
+            --brand-teal-darker: #0a7f71; /* Darker teal */
+            --brand-teal-lighter: #2dd4bf;
+
+            --brand-dark-bg: #0A0F1E; /* Even Darker Slate Blue/Near Black */
+            --brand-card-bg: #101727; /* Darker Card Background */
+            --brand-border-color: #273242; /* Darker Border */
+
+            --text-light: #E2E8F0; /* Slightly less bright off-white */
+            --text-muted-light: #818DA4; /* Muted text, ensure contrast */
+            --text-dark: #0A0F1E;
+
+            --font-primary: 'Share Tech Mono', monospace;
+            --font-secondary: 'Roboto', sans-serif;
+
+            --border-radius-sharp: 0.25rem; /* Sharper edges */
+            --border-radius-none: 0; /* For extremely sharp edges if needed */
+        }
+
         body {
-            background-color: #000000; /* Pure black background */
-            color: #e5e7eb; /* gray-200 */
-            font-family: 'Share Tech Mono', monospace; /* Font applied via Tailwind config */
+            background-color: var(--brand-dark-bg);
+            color: var(--text-light);
+            font-family: var(--font-secondary);
+            font-weight: 300;
+            line-height: 1.7;
         }
-        .hero-glow {
+
+        h1, h2, h3, h4, h5, h6, .navbar-brand, .display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
+            font-family: var(--font-primary);
+            color: var(--text-light);
+        }
+
+        .navbar-brand .brand-name-purple { color: var(--brand-purple-lighter); }
+        .navbar-brand .brand-name-teal { color: var(--brand-teal-lighter); }
+
+        .navbar {
+            background-color: rgba(10, 15, 30, 0.9); /* var(--brand-dark-bg) with opacity */
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--brand-border-color);
+        }
+
+        .btn {
+            border-radius: var(--border-radius-sharp); /* Sharper buttons */
+        }
+
+        .btn-brand-purple {
+            background-color: var(--brand-purple);
+            border-color: var(--brand-purple);
+            color: white;
+            font-family: var(--font-primary);
+            padding: 0.6rem 1.5rem;
+            transition: all 0.3s ease;
+        }
+        .btn-brand-purple:hover, .btn-brand-purple:focus {
+            background-color: var(--brand-purple-darker);
+            border-color: var(--brand-purple-darker);
+            color: white;
+            box-shadow: 0 0 20px rgba(109, 40, 217, 0.6); /* More intense purple glow */
+        }
+
+        .btn-brand-teal {
+            background-color: var(--brand-teal);
+            border-color: var(--brand-teal);
+            color: var(--brand-dark-bg);
+            font-family: var(--font-primary);
+            font-weight: bold;
+            padding: 0.75rem 2rem;
+            transition: all 0.3s ease;
+        }
+        .btn-brand-teal:hover, .btn-brand-teal:focus {
+            background-color: var(--brand-teal-darker);
+            border-color: var(--brand-teal-darker);
+            color: var(--text-light); /* Light text on darker teal hover */
+            box-shadow: 0 0 20px rgba(20, 184, 166, 0.6); /* More intense teal glow */
+        }
+
+        .section-py {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, rgba(75, 27, 153, 0.25), rgba(10, 127, 113, 0.25)), var(--brand-dark-bg); /* Darker, more purple/teal gradient */
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+        .hero-section .display-3 {
+            font-size: calc(1.8rem + 2.8vw);
+            line-height: 1.2;
+            text-shadow: 0 0 10px rgba(0,0,0,0.5); /* Subtle text shadow for depth */
+        }
+        @media (min-width: 1200px) {
+            .hero-section .display-3 { font-size: 4.5rem; }
+        }
+        .hero-section .lead {
+            color: var(--text-muted-light);
+            font-size: 1.1rem;
+            max-width: 700px;
+        }
+
+        .section-title {
+            margin-bottom: 3rem;
             position: relative;
-            z-index: 1;
+            padding-bottom: 1rem;
         }
-        .hero-glow::before {
+        .section-title::after {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -20%;
-            width: 140%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(109, 40, 217, 0.25) 0%, rgba(109, 40, 217, 0) 65%); /* Purple glow effect */
-            z-index: -1;
-            animation: pulse-glow 8s infinite ease-in-out;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px; /* Longer underline */
+            height: 4px; /* Thicker underline */
+            background: linear-gradient(90deg, var(--brand-purple-darker), var(--brand-teal-darker)); /* Darker gradient */
+            border-radius: 1px; /* Sharper radius */
+            box-shadow: 0 0 8px var(--brand-purple);
         }
-        @keyframes pulse-glow {
-            0%, 100% { opacity: 0.8; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.05); }
+        .section-subtitle {
+            color: var(--text-muted-light);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 3rem;
         }
-        .section-divider {
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #14b8a6, transparent); /* Teal gradient divider */
-            opacity: 0.7;
-            margin: 4rem auto;
-            width: 80%;
-            max-width: 600px;
+
+        .card-feature, .card-portfolio, .card-story {
+            background-color: var(--brand-card-bg);
+            border: 1px solid var(--brand-border-color);
+            border-radius: var(--border-radius-sharp); /* Sharper edges */
+            transition: transform 0.3s ease, box-shadow 0.4s ease;
+            overflow: hidden;
         }
-        .portfolio-card {
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        .card-feature:hover, .card-portfolio:hover {
+            transform: translateY(-10px) scale(1.02); /* More dramatic hover */
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6), 0 0 30px var(--brand-purple-darker, 0.4); /* Evil purple glow */
         }
-        .portfolio-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(20, 184, 166, 0.3); /* Teal shadow on hover */
+        .card-feature .card-icon i {
+            font-size: 2.8rem; /* Slightly larger icons */
+            margin-bottom: 1rem;
+            display: inline-block;
+            background: -webkit-linear-gradient(45deg, var(--brand-purple), var(--brand-teal-darker));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 5px var(--brand-purple-lighter)); /* Icon glow */
         }
-        /* Helper class for purple text */
-        .text-brand-purple {
-             color: #6d28d9;
+        .card-feature .card-title, .card-portfolio .card-title {
+            color: var(--text-light);
         }
-        /* Helper class for teal text */
-        .text-brand-teal {
-             color: #14b8a6;
+        .card-feature .card-text, .card-portfolio .card-text {
+            color: var(--text-muted-light);
+            font-size: 0.95rem;
         }
-        /* Style for the phone number link */
-        .phone-link {
-            color: #a5b4fc; /* Indigo-300 for visibility */
+
+        .portfolio-card-header {
+            background-size: cover;
+            background-position: center;
+            min-height: 220px; /* Slightly taller */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .portfolio-card-header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(180deg, rgba(10, 15, 30, 0.5) 0%, var(--brand-card-bg) 100%); /* Darker overlay */
+        }
+        .portfolio-card-header .bi { /* Icon in portfolio header */
+            font-size: 4rem; /* Made icon larger */
+            color: rgba(139, 92, 246, 0.65); /* Purple-ish icon color, slightly more opaque */
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 0 12px var(--brand-purple); /* Stronger shadow */
+        }
+         .portfolio-card-header-rushit { background-image: url('https://placehold.co/600x400/4b1b99/4b1b99?text=%20'); } /* Text color same as BG, URL encoded space */
+         .portfolio-card-header-petrocipher { background-image: url('https://placehold.co/600x400/0a7f71/0a7f71?text=%20'); } /* Text color same as BG, URL encoded space */
+
+
+        #our-story {
+            background-color: var(--brand-card-bg);
+        }
+        .card-story {
+             box-shadow: 0 8px 30px rgba(0,0,0,0.4); /* More defined shadow */
+             border: 1px solid var(--brand-purple-darker); /* Evil border */
+        }
+        .card-story .card-body {
+            padding: 2.5rem; /* More padding */
+        }
+        .card-story h3 {
+            color: var(--brand-purple-lighter);
+        }
+         .card-story .section-title {
+            color: var(--brand-purple-lighter);
+        }
+        .card-story p {
+            color: var(--text-muted-light);
+            font-size: 1.05rem;
+        }
+        .card-story .founders-names {
+            color: var(--brand-teal-lighter);
+            font-weight: bold;
+            font-family: var(--font-primary);
+            text-shadow: 0 0 5px var(--brand-teal);
+        }
+        .card-story .story-highlight {
+            color: var(--brand-purple-lighter);
+            background-color: rgba(75, 27, 153, 0.2);
+            padding: 0.1em 0.3em;
+            border-radius: var(--border-radius-sharp);
+            font-style: italic;
+            font-weight: 400;
+        }
+        .card-story strong {
+            color: var(--text-light);
+            font-family: var(--font-primary);
+            text-shadow: 0 0 3px var(--brand-purple);
+        }
+
+
+        #contact {
+            background-color: var(--brand-card-bg);
+        }
+        .contact-link {
+            color: var(--brand-teal-lighter);
             text-decoration: none;
-            transition: color 0.3s ease;
+            font-weight: bold;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
         }
-        .phone-link:hover {
-            color: #c7d2fe; /* Indigo-200 on hover */
+        .contact-link:hover {
+            color: var(--brand-teal);
+            text-shadow: 0 0 8px var(--brand-teal);
         }
+
+        .btn-outline-light-themed {
+            --bs-btn-color: var(--text-light) !important;
+            --bs-btn-border-color: var(--brand-border-color) !important;
+            --bs-btn-hover-color: var(--brand-dark-bg) !important;
+            --bs-btn-hover-border-color: var(--bs-btn-hover-bg) !important;
+            --bs-btn-active-color: var(--brand-dark-bg) !important;
+            --bs-btn-active-border-color: var(--bs-btn-active-bg) !important;
+            transition: all 0.3s ease;
+        }
+         .btn-outline-light-themed:hover {
+            box-shadow: 0 0 10px var(--bs-btn-hover-bg);
+         }
+
+
+        footer {
+            background-color: var(--brand-dark-bg);
+            border-top: 1px solid var(--brand-border-color);
+            color: var(--text-muted-light);
+            font-size: 0.9rem;
+        }
+        footer p { margin-bottom: 0.25rem; }
+
     </style>
 </head>
-<body class="bg-black text-gray-200 antialiased">
+<body>
 
-    <header class="py-4 sm:py-6 px-4 md:px-8 sticky top-0 z-50 bg-black/80 backdrop-blur-sm">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl sm:text-3xl font-bold tracking-tight">
-                <span class="text-brand-purple">Xerodyne</span><span class="text-brand-teal">Systems</span>
-            </h1>
-            <nav>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg py-3">
+            <div class="container">
+                <a class="navbar-brand fs-4 fw-bold" href="#">
+                    <span class="brand-name-purple">Xerodyne</span><span class="brand-name-teal">Systems</span>
+                </a>
                 <a href="mailto:speed@xerodyne.systems?subject=Consultation Request"
-                   title="Email XeroDyne Systems for a Consultation"
-                   class="bg-brand-purple hover:bg-purple-700 text-white font-semibold py-2 px-4 sm:py-2 sm:px-5 rounded-lg transition duration-300 ease-in-out shadow-md hover:shadow-glow-purple text-xs sm:text-sm md:text-base">
+                   title="Email Xerodyne Systems for a Consultation"
+                   class="btn btn-brand-purple btn-sm d-none d-lg-inline-block">
                     Request Consultation
                 </a>
-            </nav>
-        </div>
+                <a href="mailto:speed@xerodyne.systems?subject=Consultation Request"
+                   title="Email Xerodyne Systems for a Consultation"
+                   class="btn btn-brand-purple btn-sm d-lg-none ms-auto">
+                    Email Us
+                </a>
+            </div>
+        </nav>
     </header>
 
-    <section class="hero-glow text-center py-20 md:py-32 px-4 overflow-hidden">
-        <div class="container mx-auto relative z-10">
-            <h2 class="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
-                Building Your <span class="text-brand-teal">Future</span>, Faster.
-            </h2>
-            <p class="text-lg md:text-xl text-purple-300 mb-8 max-w-3xl mx-auto">
-                Rapid MicroSaaS solutions delivered by <span class="font-semibold text-white">Xerodyne Systems</span> in 3-6 months, precision-engineered for the unique demands of the <span class="font-semibold text-teal-300">Oklahoma oil and gas industry and anywhere else</span>.
-            </p>
-            <a href="#services" class="bg-brand-teal hover:bg-teal-500 text-black font-bold py-3 px-8 rounded-lg transition duration-300 ease-in-out shadow-lg hover:shadow-glow-teal text-base md:text-lg">
-                Discover Our Process
-            </a>
-        </div>
-    </section>
-
-    <div class="section-divider"></div>
-
-    <section id="services" class="py-16 md:py-24 px-4">
-        <div class="container mx-auto text-center">
-            <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">Focused Solutions, Accelerated Delivery</h3>
-            <p class="text-purple-300 mb-12 max-w-2xl mx-auto">
-                We skip the bloat. <span class="font-semibold text-white">Xerodyne Systems</span> crafts targeted MicroSaaS applications addressing your specific operational bottlenecks. Our agile process guarantees functional, high-impact software in just 3 to 6 months.
-            </p>
-            <div class="grid md:grid-cols-3 gap-8 text-left">
-                <div class="bg-gray-900 p-6 rounded-lg border border-gray-700 shadow-lg">
-                    <div class="text-brand-teal mb-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
-                    </div>
-                    <h4 class="text-xl font-semibold text-white mb-2">Rapid Development</h4>
-                    <p class="text-gray-400">From concept to deployment in record time. Our streamlined workflow focuses on delivering core functionality quickly and efficiently.</p>
-                </div>
-                <div class="bg-gray-900 p-6 rounded-lg border border-gray-700 shadow-lg">
-                    <div class="text-brand-teal mb-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17.25v-.001M9.75 14.25v-.001M14.25 17.25v-.001M14.25 14.25v-.001M5.25 19.5h13.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H5.25a2.25 2.25 0 00-2.25 2.25v10.5a2.25 2.25 0 002.25 2.25z" />
-                        </svg>
-                    </div>
-                    <h4 class="text-xl font-semibold text-white mb-2">Targeted Use Cases</h4>
-                    <p class="text-gray-400">We specialize in solving specific problems for the <span class="font-medium text-teal-400">Oklahoma oil and gas sector</span>, from logistics optimization to data management.</p>
-                </div>
-                <div class="bg-gray-900 p-6 rounded-lg border border-gray-700 shadow-lg">
-                    <div class="text-brand-teal mb-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75l-10.5 10.5m0-10.5l10.5 10.5" />
-                        </svg>
-                    </div>
-                    <h4 class="text-xl font-semibold text-white mb-2">MicroSaaS Model</h4>
-                    <p class="text-gray-400">Lean, efficient, and cost-effective. Get the exact software you need without paying for unnecessary features or long development cycles.</p>
-                </div>
+    <main>
+        <section class="hero-section section-py text-center">
+            <div class="container">
+                <h1 class="display-3 fw-bold mb-4">
+                    Building Your <span style="color: var(--brand-teal-lighter);">Future</span>, Faster.
+                </h1>
+                <p class="lead mb-5 mx-auto">
+                    Rapid MicroSaaS solutions by <span class="fw-bold" style="color: var(--text-light);">Xerodyne Systems</span>. Precision-engineered software in 3-6 months for the <span style="color: var(--brand-teal-lighter);">Oklahoma oil and gas industry</span> and beyond.
+                </p>
+                <a href="#services" class="btn btn-brand-teal btn-lg">
+                    Discover Our Process
+                </a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <div class="section-divider"></div>
-
-    <section id="portfolio" class="py-16 md:py-24 px-4">
-        <div class="container mx-auto text-center">
-            <h3 class="text-3xl md:text-4xl font-bold text-white mb-12">Our Portfolio</h3>
-            <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
-                <div class="max-w-xl mx-auto bg-gray-900 rounded-lg border border-gray-700 shadow-xl overflow-hidden portfolio-card">
-                    <div class="bg-gradient-to-br from-purple-900 to-teal-900 h-48 flex items-center justify-center">
-                         <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-teal-400 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
-                           <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.125-.504 1.125-1.125V14.25m-17.25 4.5h14.25m-14.25 0V6.75c0-1.036.84-1.875 1.875-1.875h10.5c1.036 0 1.875.84 1.875 1.875v10.5m0-12.375h-1.5a1.125 1.125 0 00-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125h1.5c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125z" />
-                         </svg>
-                         <span class="ml-4 text-2xl font-semibold text-teal-200">Lightweight Dispatch Solution</span>
-                    </div>
-                    <div class="p-6 md:p-8 text-left">
-                        <h4 class="text-2xl font-semibold text-white mb-3">Rush-I.T. Dispatch - Logistics Optimization</h4>
-                        <p class="text-gray-400 mb-4">
-                            Developed for an <span class="font-medium text-teal-400">Oklahoma-based oilfield service company</span>, Rush-I.T. streamlines sending jobs and managing times. This MicroSaaS solution significantly time spent dispatching and improved response times across their service area.
-                        </p>
-                        <p class="text-gray-400 mb-6">
-                            Features include optimized web portals for any system or device, driver mobile interface, and management dashboard, and an AI summarizer.
-                        </p>
-                        <a href="rush-it.html" class="inline-block text-brand-teal hover:text-teal-300 font-semibold transition duration-300 mb-2">
-                            Explore Rush-I.T. &rarr;
-                        </a>
-                        <br>
-                        <a href="https://rush-it.xerodyne.systems" target="_blank" rel="noopener noreferrer" class="inline-block bg-brand-teal hover:bg-teal-500 text-black font-semibold py-2 px-4 rounded-lg transition duration-300 ease-in-out text-sm mt-2">
-                            Demo App
-                        </a>
-                    </div>
-                </div>
-
-                <div class="max-w-xl mx-auto bg-gray-900 rounded-lg border border-gray-700 shadow-xl overflow-hidden portfolio-card">
-                    <div class="bg-gradient-to-br from-purple-900 to-teal-900 h-48 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-purple-400 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M5.636 5.636a9 9 0 1012.728 0M12 3v9" /> <path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a.75.75 0 100-1.5.75.75 0 000 1.5z" /> <path stroke-linecap="round" stroke-linejoin="round" d="M12 12.75a.75.75 0 100-1.5.75.75 0 000 1.5z" /> <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 100-1.5.75.75 0 000 1.5z" /> </svg>
-                        <span class="ml-4 text-2xl font-semibold text-purple-200">Downtime Analytics Platform</span>
-                    </div>
-                    <div class="p-6 md:p-8 text-left">
-                        <h4 class="text-2xl font-semibold text-white mb-3">PetroCipher Performance</h4>
-                        <p class="text-gray-400 mb-6">
-                            By providing a centralized hub for well information, equipment details, and reason code management, PetroCipher Performance offers data-driven insights to reduce non-productive time, enhance decision-making, and ultimately boost your bottom line. Streamline reporting, identify critical performance trends, and drive continuous improvement across your oilfield operations with this intuitive and robust solution.
-                        </p>
-                        <a href="https://petrocipher.xerodyne.systems/" target="_blank" rel="noopener noreferrer" class="inline-block bg-brand-purple hover:bg-purple-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 ease-in-out text-sm mt-2">
-                            Demo App
-                        </a>
+        <section id="our-story" class="section-py">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 col-xl-8">
+                        <div class="card-story text-center">
+                            <div class="card-body">
+                                <h2 class="section-title">Our Dark Genesis</h2>
+                                <p class="mb-3">
+                                    The idea for Xerodyne Systems wasn't born in a boardroom; it was forged in the trenches. A group of us – <span class="founders-names">Vinnie, Ruben, Sean, and Hunter</span> – were frankly fed up. We were tired of battling <span class="story-highlight">insanely costly software that consistently underdelivered</span>, rarely worked as promised, and suffered from an excruciatingly slow feature turnaround.
+                                </p>
+                                <p>
+                                    We knew there had to be a better way. So, we put our heads together and decided to build it. That’s how Xerodyne Systems came to be: a software firm dedicated to <strong>making things easier, more efficient, and actually work for you</strong>, not against you. We build the tools we wished we had.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <div class="section-divider"></div>
 
-    <section id="contact" class="py-16 md:py-24 px-4 bg-gray-900/70">
-        <div class="container mx-auto text-center">
-            <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Streamline Your Operations?</h3>
-            <p class="text-purple-300 mb-8 max-w-2xl mx-auto">
-                Let's discuss how a custom MicroSaaS solution from <span class="font-semibold text-white">Xerodyne Systems</span> can address your specific challenges in the <span class="font-semibold text-teal-300">Oklahoma oil and gas market and anywhere else</span>. Get started with a free consultation.
-            </p>
-            <a href="mailto:speed@xerodyne.systems?subject=Consultation Request - Oklahoma Oil & Gas Solution"
-               title="Email Xerodyne Systems for a Free Consultation"
-               class="bg-brand-purple hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 ease-in-out shadow-lg hover:shadow-glow-purple text-base md:text-lg mb-4 inline-block">
-                Request Free Consultation via Email
-            </a>
-            <p class="text-purple-300 mt-4">
-                Or call us directly at: <a href="tel:405-440-3120" class="phone-link font-semibold">405-440-3120</a>
-            </p>
-        </div>
-    </section>
+        <section id="services" class="section-py">
+            <div class="container text-center">
+                <h2 class="section-title">Focused Solutions, Accelerated Delivery</h2>
+                <p class="section-subtitle">
+                    We skip the bloat. Xerodyne Systems crafts targeted MicroSaaS applications addressing your specific operational bottlenecks. Our agile process guarantees functional, high-impact software in just 3 to 6 months.
+                </p>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card-feature h-100">
+                            <div class="card-body p-4 p-lg-5">
+                                <div class="card-icon"><i class="bi bi-lightning-charge-fill"></i></div>
+                                <h4 class="card-title fs-5 fw-bold mb-3">Rapid Development</h4>
+                                <p class="card-text">From concept to deployment in record time. Our streamlined workflow focuses on delivering core functionality quickly and efficiently.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card-feature h-100">
+                            <div class="card-body p-4 p-lg-5">
+                                <div class="card-icon"><i class="bi bi-bullseye"></i></div>
+                                <h4 class="card-title fs-5 fw-bold mb-3">Targeted Use Cases</h4>
+                                <p class="card-text">We specialize in solving specific problems, especially for the <span style="color: var(--brand-teal-lighter);">Oklahoma oil and gas sector</span>, from logistics to data management.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card-feature h-100">
+                            <div class="card-body p-4 p-lg-5">
+                                <div class="card-icon"><i class="bi bi-gem"></i></div>
+                                <h4 class="card-title fs-5 fw-bold mb-3">MicroSaaS Model</h4>
+                                <p class="card-text">Lean, efficient, and cost-effective. Get the exact software you need without paying for unnecessary features or long development cycles.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <footer class="py-8 px-4 mt-16 border-t border-gray-700/50">
-        <div class="container mx-auto text-center text-gray-500 text-sm">
+        <section id="portfolio" class="section-py" style="background-color: var(--brand-dark-bg);">
+            <div class="container text-center">
+                <h2 class="section-title">Our Portfolio In Action</h2>
+                 <p class="section-subtitle">
+                    See how we've transformed operations with our custom-built MicroSaaS solutions.
+                </p>
+                <div class="row g-4 g-lg-5 justify-content-center">
+                    <div class="col-md-6 col-lg-5">
+                        <div class="card-portfolio h-100">
+                            <div class="portfolio-card-header portfolio-card-header-rushit">
+                                <i class="bi bi-truck"></i> </div>
+                            <div class="card-body p-4 text-start">
+                                <h4 class="card-title fs-4 fw-bold mb-3">Rush-I.T. Dispatch</h4>
+                                <p class="card-text mb-3">
+                                    Logistics optimization for an <span style="color: var(--brand-teal-lighter);">Oklahoma-based oilfield service company</span>. Streamlined job assignments, time tracking, and significantly improved response times.
+                                </p>
+                                <p class="card-text small mb-3" style="color: var(--text-muted-light);">
+                                    Features: Web portals, driver mobile interface, management dashboard, AI summarizer.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <a href="rush-it.html" class="contact-link small">Explore Rush-I.T. &rarr;</a>
+                                    <a href="https://rush-it.xerodyne.systems" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light-themed btn-sm" style="--bs-btn-hover-bg: var(--brand-teal-lighter);">
+                                        Live Demo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-5">
+                        <div class="card-portfolio h-100">
+                             <div class="portfolio-card-header portfolio-card-header-petrocipher">
+                                <i class="bi bi-graph-up-arrow"></i> </div>
+                            <div class="card-body p-4 text-start">
+                                <h4 class="card-title fs-4 fw-bold mb-3">PetroCipher Performance</h4>
+                                <p class="card-text mb-3">
+                                    Downtime analytics providing a centralized hub for well information, equipment details, and reason code management. Offers data-driven insights to reduce non-productive time.
+                                </p>
+                                 <p class="card-text small mb-3" style="color: var(--text-muted-light);">
+                                    Features: Centralized data, performance analytics, custom reporting.
+                                </p>
+                                <div class="text-end">
+                                    <a href="https://petrocipher.xerodyne.systems/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light-themed btn-sm" style="--bs-btn-hover-bg: var(--brand-purple-lighter);">
+                                        Live Demo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section-py">
+            <div class="container text-center">
+                <h2 class="section-title">Ready to Streamline Your Operations?</h2>
+                <p class="section-subtitle">
+                    Let's discuss how a custom MicroSaaS solution from Xerodyne Systems can address your specific challenges. Get started with a free consultation.
+                </p>
+                <a href="mailto:speed@xerodyne.systems?subject=Consultation Request - Xerodyne Systems"
+                   title="Email Xerodyne Systems for a Free Consultation"
+                   class="btn btn-brand-purple btn-lg mb-4">
+                    Request Free Consultation
+                </a>
+                <p class="text-muted-light mt-3">
+                    Or call us directly: <a href="tel:405-440-3120" class="contact-link">405-440-3120</a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-4 text-center">
+        <div class="container">
             <p>&copy; <span id="current-year"></span> Xerodyne Systems. All Rights Reserved.</p>
-            <p class="mt-1">Specializing in rapid software development for the Oklahoma Oil & Gas Industry and anywhere else.</p>
-             <script>
-                document.getElementById('current-year').textContent = new Date().getFullYear();
-            </script>
+            <p>Specializing in rapid software development for the Oklahoma Oil & Gas Industry and beyond.</p>
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
