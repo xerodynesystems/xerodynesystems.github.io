@@ -184,7 +184,7 @@
             margin-bottom: 3rem;
         }
 
-        .card-feature, .card-portfolio, .card-story, .card-idea {
+        .card-feature, .card-portfolio, .card-story { /* Removed .card-idea */
             background-color: var(--brand-card-bg);
             border: 1px solid var(--brand-border-color);
             border-radius: var(--border-radius-sharp);
@@ -204,10 +204,10 @@
             -webkit-text-fill-color: transparent;
             filter: drop-shadow(0 0 5px var(--brand-purple-lighter));
         }
-        .card-feature .card-title, .card-portfolio .card-title, .card-idea .card-title {
+        .card-feature .card-title, .card-portfolio .card-title { /* Removed .card-idea .card-title */
             color: var(--text-light);
         }
-        .card-feature .card-text, .card-portfolio .card-text, .card-idea .card-text {
+        .card-feature .card-text, .card-portfolio .card-text { /* Removed .card-idea .card-text */
             color: var(--text-muted-light);
             font-size: 0.95rem;
         }
@@ -278,57 +278,9 @@
             text-shadow: 0 0 3px var(--brand-purple);
         }
 
-        #idea-spark-section {
-            background-color: var(--brand-card-bg);
-        }
-        #idea-spark-section .form-control {
-            background-color: var(--brand-dark-bg);
-            color: var(--text-light);
-            border-color: var(--brand-border-color);
-            font-family: var(--font-secondary);
-        }
-        #idea-spark-section .form-control::placeholder {
-            color: var(--text-muted-light);
-        }
-        #idea-spark-section .form-control:focus {
-            background-color: var(--brand-dark-bg);
-            color: var(--text-light);
-            border-color: var(--brand-purple-lighter);
-            box-shadow: 0 0 0 0.25rem rgba(109, 40, 217, 0.25);
-        }
-        .modal-content {
-            background-color: var(--brand-card-bg);
-            border: 1px solid var(--brand-purple-darker);
-            border-radius: var(--border-radius-sharp);
-        }
-        .modal-header {
-            border-bottom: 1px solid var(--brand-border-color);
-        }
-        .modal-header .btn-close {
-            filter: invert(1) grayscale(100%) brightness(200%);
-        }
-        .modal-title {
-            color: var(--brand-purple-lighter);
-        }
-        .card-idea {
-            margin-bottom: 1.5rem;
-            border-left: 3px solid var(--brand-teal);
-        }
-        .card-idea .card-header {
-            background-color: rgba(20, 184, 166, 0.1);
-            color: var(--brand-teal-lighter);
-            font-family: var(--font-primary);
-            padding: 0.75rem 1.25rem;
-            border-bottom: 1px solid var(--brand-border-color);
-        }
-         .card-idea ul {
-            padding-left: 1.2rem;
-            color: var(--text-muted-light);
-         }
-         .card-idea li {
-            margin-bottom: 0.3rem;
-         }
-
+        /* Removed #idea-spark-section and related styles */
+        /* Removed .modal-content, .modal-header, .modal-header .btn-close, .modal-title styles as they were specific to the removed modal */
+        /* Removed .card-idea and related styles */
 
         #contact {
             background-color: var(--brand-card-bg);
@@ -468,28 +420,6 @@
             </div>
         </section>
 
-        <section id="idea-spark-section" class="section-py">
-            <div class="container">
-                <h2 class="section-title text-center">✨ MicroSaaS Idea Spark</h2>
-                <p class="section-subtitle text-center">
-                    Facing a challenge or exploring an industry? Let our AI spark some innovative MicroSaaS ideas for you!
-                </p>
-                <div class="row justify-content-center">
-                    <div class="col-lg-7 col-md-9">
-                        <div class="mb-3">
-                            <label for="ideaQueryInput" class="form-label visually-hidden">Industry or Problem</label>
-                            <input type="text" class="form-control form-control-lg" id="ideaQueryInput" placeholder="e.g., 'sustainable farming logistics', 'musician collaboration tools'">
-                        </div>
-                        <div class="text-center">
-                            <button id="generateIdeasButton" class="btn btn-brand-purple btn-lg">
-                                <span class="spinner-border spinner-border-sm d-none me-2" role="status" aria-hidden="true"></span>
-                                Generate Ideas
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
         <section id="portfolio" class="section-py" style="background-color: var(--brand-dark-bg);">
             <div class="container text-center">
                 <h2 class="section-title">Our Portfolio In Action</h2>
@@ -563,34 +493,6 @@
         </section>
     </main>
 
-    <div class="modal fade" id="ideasModal" tabindex="-1" aria-labelledby="ideasModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="ideasModalLabel">✨ AI-Sparked MicroSaaS Ideas</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body" id="ideasModalBody">
-                    <div id="ideasLoadingState" class="text-center d-none">
-                        <div class="spinner-border text-brand-purple" role="status" style="width: 3rem; height: 3rem;">
-                            <span class="visually-hidden">Generating Ideas...</span>
-                        </div>
-                        <p class="mt-2 text-muted-light">Sparking brilliance... please wait.</p>
-                    </div>
-                    <div id="ideasResultContainer">
-                        </div>
-                    <div id="ideasErrorState" class="alert alert-danger d-none" role="alert" style="background-color: rgba(var(--brand-purple-darker), 0.3); border-color: var(--brand-purple-darker); color: var(--text-light);">
-                        Oops! Something went wrong while sparking ideas. Please try again.
-                    </div>
-                </div>
-                <div class="modal-footer border-top-0">
-                    <button type="button" class="btn btn-outline-light-themed" data-bs-dismiss="modal" style="--bs-btn-hover-bg: var(--brand-border-color);">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
     <footer class="py-4 text-center">
         <div class="container">
             <p>&copy; <span id="current-year"></span> Xerodyne Systems. All Rights Reserved.</p>
@@ -602,141 +504,7 @@
     <script>
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
-        // Gemini API Integration for Idea Spark
-        const generateIdeasButton = document.getElementById('generateIdeasButton');
-        const ideaQueryInput = document.getElementById('ideaQueryInput');
-        const ideasModalElement = document.getElementById('ideasModal');
-        const ideasModalBody = document.getElementById('ideasModalBody');
-        const ideasResultContainer = document.getElementById('ideasResultContainer');
-        const ideasLoadingState = document.getElementById('ideasLoadingState');
-        const ideasErrorState = document.getElementById('ideasErrorState');
-        const ideasModal = new bootstrap.Modal(ideasModalElement);
-
-        generateIdeasButton.addEventListener('click', async () => {
-            const query = ideaQueryInput.value.trim();
-            if (!query) {
-                alert('Please enter an industry or problem to spark ideas!');
-                return;
-            }
-
-            ideasResultContainer.innerHTML = '';
-            ideasErrorState.classList.add('d-none');
-            ideasLoadingState.classList.remove('d-none');
-            generateIdeasButton.disabled = true;
-            generateIdeasButton.querySelector('.spinner-border').classList.remove('d-none');
-
-            ideasModal.show();
-
-            const apiKey = "";
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-
-            const prompt = `You are an expert MicroSaaS consultant. A user is looking for innovative ideas related to: "${query}".
-
-Generate exactly 3 distinct MicroSaaS ideas. For each idea, provide:
-1.  A catchy 'name'.
-2.  A concise 'description' (1-2 sentences).
-3.  A list of 2-3 key 'features'.`;
-
-            const payload = {
-                contents: [{ role: "user", parts: [{ text: prompt }] }],
-                generationConfig: {
-                    responseMimeType: "application/json",
-                    responseSchema: {
-                        type: "OBJECT",
-                        properties: {
-                            "ideas": {
-                                type: "ARRAY",
-                                description: "List of 3 MicroSaaS ideas.",
-                                items: {
-                                    type: "OBJECT",
-                                    properties: {
-                                        "name": { type: "STRING", description: "Catchy name for the MicroSaaS idea." },
-                                        "description": { type: "STRING", description: "Concise 1-2 sentence description." },
-                                        "features": {
-                                            type: "ARRAY",
-                                            description: "List of 2-3 key features.",
-                                            items: { type: "STRING" }
-                                        }
-                                    },
-                                    required: ["name", "description", "features"]
-                                }
-                            }
-                        },
-                        required: ["ideas"]
-                    }
-                }
-            };
-
-            try {
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                if (!response.ok) {
-                    const errorBody = await response.text();
-                    console.error('API Error Response:', errorBody);
-                    throw new Error(`API request failed with status ${response.status}`);
-                }
-
-                const result = await response.json();
-                ideasLoadingState.classList.add('d-none');
-
-                if (result.candidates && result.candidates.length > 0 &&
-                    result.candidates[0].content && result.candidates[0].content.parts &&
-                    result.candidates[0].content.parts.length > 0 &&
-                    result.candidates[0].content.parts[0].text) {
-
-                    const parsedJson = JSON.parse(result.candidates[0].content.parts[0].text);
-
-                    if (parsedJson.ideas && parsedJson.ideas.length > 0) {
-                        displayIdeas(parsedJson.ideas);
-                    } else {
-                        console.error('Parsed JSON does not contain ideas array or it is empty:', parsedJson);
-                        throw new Error('No ideas found in the response.');
-                    }
-                } else {
-                    console.error('Unexpected API response structure:', result);
-                    throw new Error('Unexpected API response structure.');
-                }
-
-            } catch (error) {
-                console.error('Error generating ideas:', error);
-                ideasLoadingState.classList.add('d-none');
-                ideasErrorState.classList.remove('d-none');
-                ideasErrorState.textContent = `Oops! Spark failed: ${error.message}. Check console for details.`;
-            } finally {
-                generateIdeasButton.disabled = false;
-                generateIdeasButton.querySelector('.spinner-border').classList.add('d-none');
-            }
-        });
-
-        function displayIdeas(ideas) {
-            ideasResultContainer.innerHTML = '';
-            ideas.forEach(idea => {
-                const ideaCard = document.createElement('div');
-                ideaCard.className = 'card card-idea mb-4';
-
-                let featuresHtml = '<ul class="list-unstyled mt-2">';
-                idea.features.forEach(feature => {
-                    featuresHtml += `<li><i class="bi bi-check-circle-fill text-brand-teal me-2"></i>${feature}</li>`;
-                });
-                featuresHtml += '</ul>';
-
-                ideaCard.innerHTML = `
-                    <div class="card-header">
-                        ${idea.name}
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">${idea.description}</p>
-                        <h6 class="text-brand-teal-lighter mt-3 mb-2" style="font-family: var(--font-primary);">Key Features:</h6>
-                        ${featuresHtml}
-                    </div>
-                `;
-                ideasResultContainer.appendChild(ideaCard);
-            });
-        }
+        // Gemini API Integration for Idea Spark - REMOVED
 
         // Matrix Background Animation
         const canvas = document.getElementById('matrix-canvas');
@@ -745,8 +513,10 @@ Generate exactly 3 distinct MicroSaaS ideas. For each idea, provide:
         let heroSection = document.querySelector('.hero-section');
 
         function resizeCanvas() {
-            canvas.width = heroSection.offsetWidth;
-            canvas.height = heroSection.offsetHeight;
+            if (heroSection && canvas) { // Check if elements exist
+                canvas.width = heroSection.offsetWidth;
+                canvas.height = heroSection.offsetHeight;
+            }
         }
 
         resizeCanvas();
@@ -755,11 +525,12 @@ Generate exactly 3 distinct MicroSaaS ideas. For each idea, provide:
         const matrixChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@#$%^&*()*&^%+-/~{[|`]}";
         const characters = matrixChars.split('');
 
-        const fontSize = 4 // Adjusted font size
+        const fontSize = 5; // Adjusted font size
         let columns;
         let drops = [];
 
         function initializeMatrix() {
+            if (!heroSection || !canvas || !ctx) return; // Ensure all are available
             resizeCanvas();
             columns = Math.floor(canvas.width / fontSize);
             drops = [];
@@ -772,20 +543,23 @@ Generate exactly 3 distinct MicroSaaS ideas. For each idea, provide:
 
 
         function drawMatrix() {
-            ctx.fillStyle = "rgba(10, 15, 30, 0.04)"; // Adjusted opacity for more subdued trails
+            if (!canvas || !ctx || !drops || !characters) return; // Ensure all are available
+
+            ctx.fillStyle = "rgba(10, 15, 30, 0.04)";
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
             ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--brand-purple-darker').trim() || "#4b1b99";
             ctx.font = fontSize + "px " + getComputedStyle(document.documentElement).getPropertyValue('--font-primary').trim();
 
             for (let i = 0; i < drops.length; i++) {
+                if (drops[i] === undefined) continue; // Skip if a drop is undefined
                 const text = characters[Math.floor(Math.random() * characters.length)];
                 ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-                if (drops[i] * fontSize > canvas.height && Math.random() > 0.99) { // Less frequent resets
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.99) {
                     drops[i] = 0;
                 }
-                drops[i] += 0.050; // Slowed down fall speed
+                drops[i] += 0.050;
             }
         }
 
@@ -795,12 +569,20 @@ Generate exactly 3 distinct MicroSaaS ideas. For each idea, provide:
             animationFrameId = requestAnimationFrame(animateMatrix);
         }
 
-        animateMatrix();
+        // Start animation only if canvas and context are available
+        if (canvas && ctx) {
+            animateMatrix();
+        }
+
 
         window.addEventListener('resize', () => {
-            cancelAnimationFrame(animationFrameId);
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+            }
             initializeMatrix();
-            animateMatrix();
+            if (canvas && ctx) { // Restart animation only if canvas is still valid
+                 animateMatrix();
+            }
         });
 
 
